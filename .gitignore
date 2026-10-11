@@ -16,3 +16,7 @@
 /sincronizar-pacote.bat
 /manifest-generator.bat
 /manifest-generator.js
+
+# Dados locais da exportacao do criador.
+/creator-catalog.json
+/profile-backups/

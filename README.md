@@ -13,7 +13,7 @@ Todos os perfis compatíveis aparecem juntos no criador. Não é necessário pre
 
 ## Como usar
 
-1. Dentro do jogo, digite `/8 lookprofile` para abrir a janela.
+1. Dentro do jogo, use **Ctrl+Alt+L** ou digite `/8 lookprofile` para abrir a janela.
 2. Em **Salvar perfil**, use `self` para seu personagem ou informe o nome de um personagem recebido na seleção ou visível no mapa. Dê um nome ao perfil e salve.
 3. Reabra **somente o TERA**, mantendo o Toolbox iniciado, para atualizar o catálogo.
 4. No criador, escolha raça, gênero e classe, entre em **Customize → Presets** e clique em um dos seus presets ao lado do botão aleatório.

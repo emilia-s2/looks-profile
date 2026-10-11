@@ -95,6 +95,7 @@ module.exports = function LooksProfileManager(mod) {
 
 	loadProfiles();
 	rebuildSettingsUi();
+    const disposeGuiShortcut = require('./lib/gui-shortcut')(mod, openSettings);
 
 	function notify(message) {
         feedback.push(String(message));
@@ -332,6 +333,7 @@ module.exports = function LooksProfileManager(mod) {
 	}
 
 	this.destructor = () => {
+        disposeGuiShortcut();
 		if (settingsUi) {
 			settingsUi.destructor();
 			settingsUi = null;
