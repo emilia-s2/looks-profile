@@ -1,0 +1,33 @@
+{
+    "files": {
+        "config.json": {
+            "hash": "7c13149429876de3a05e0a9ad0ca92516cb2a1c82d9851c6bb2a8c8b0c8e6032",
+            "overwrite": false
+        },
+        "index.js": "477b61f87d5a4457a6b0ba36013dba7edb1bd76b944275e5897efcd4ef69e3c9",
+        "lib/catalog.js": "aa22b211fb515d1aa59a8adb8767fc3dae62bf84407e06b169ee1e501c8d04d7",
+        "lib/panel.js": "7b0038f81b7315559ad0df39e0c98f5d54abd8934880d426925455e2db3cb1f4",
+        "lib/portrait-package.js": "d50cc53fbf53bdaed02bee25298680ab2cbac47bb828de033071c6202c13d93d",
+        "lib/portraits.js": "69f792009f96a161afd025c611bf774bc10b25745c6aaa6cfa09389314b1f497",
+        "lib/preview-cache.js": "9641a99e4f8f02a0140a1b1bbc4a8495e3c4138754dfd9613b7afa4163b31c7c",
+        "lib/profile.js": "b1060771ea75aaf1b7a7967e32ccdbcbcc20d746f44f0234e5c7ff904f617fe9",
+        "lib/selection.js": "64618e3afa18b99850c3edd6082a206c8c72fc7ca5356e6cab149c666cc54133",
+        "lib/ui-baseline-test.js": "29fb18cbfc73a5e6b063a8128ec0331f3b3534134255366798a4cefb4f51edd3",
+        "module.json": "c3814dee6b9277d3d0fc5d06ac29fcc815e14612d274e273ea40a3eb48c4150c",
+        "resources/creator-profile.gpk.gz": "af487214d5f3beba29854798fd344e021cbd05752e97a721d81f40d1d010bc03",
+        "resources/portrait-actions.bin": "bf96e6f6330bc4a8970c46f5066a345de54e4e805b36413b2dabe129371d341f",
+        "ui/crop.js": "4fdcb0b700cde4b0aff7904b151e5f613642dee8ec6b425e8bfa3a2b57855e18",
+        "ui/index.html": "edf1dbb18a81868b54b991f650966a1608ff22a4218238a694e3ca8448823727",
+        "ui/panel.js": "9ea8d0d6bbcd912b6bd0e3667b682e584cbc46c2b22120236978c8ec31eccbd7",
+        "ui/portrait-sharpness.js": "3a16482e6399063cbbcf20bb7a1ed013f83901a94667edd7b43a40b91dd94861",
+        "ui/portrait.js": "65c526bf71bdb3930f04281f1b5cdc6c21453a20afe73c363fd9a284dd0efd54",
+        "ui/style.css": "5637c38c39c9746c7236b1f5c7b52ac93d87734124d92e7d60ae2b54aa6dede4"
+    },
+    "defs": {
+        "S_DESPAWN_USER": 3,
+        "S_GET_USER_LIST": [17,18],
+        "S_LOAD_TOPO": "raw",
+        "S_LOGIN": 14,
+        "S_SPAWN_USER": [15,16]
+    }
+}

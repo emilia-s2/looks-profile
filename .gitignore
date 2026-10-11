@@ -1,0 +1,18 @@
+# Dados pessoais e arquivos gerados durante o uso do mod.
+/profiles/
+/icons/
+/preview-cache/
+/live-profile/
+/activation-history.jsonl
+/ui-test-request.json
+/ui-test-report.json
+/selection-state.json
+/startup-profile.json
+*.tmp
+*.bak
+
+# Ferramentas locais de publicacao.
+/_sync-package.js
+/sincronizar-pacote.bat
+/manifest-generator.bat
+/manifest-generator.js

@@ -1,0 +1,13 @@
+{
+    "name": "looks-profile-manager",
+    "author": "Local",
+    "description": "Catalogo de presets salvos no criador, com aplicacao opcional automatica.",
+    "version": "1.2.3",
+    "disableAutoUpdate": true,
+    "options": {
+        "niceName": "Looks Profile",
+        "guiName": "Perfis de aparência",
+        "settingsVersion": 1,
+        "settingsFile": "config.json"
+    }
+}
