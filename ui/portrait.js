@@ -2,9 +2,9 @@
 // Explicit screenshot import and human framing; no game capture or face recognition.
 window.PortraitEditor = (() => {
   const {clipboard}=require('electron'),$=id=>document.getElementById('portrait-'+id);
-  let crop=null,image=null,revision=0,resolve=null;
+  let crop=null,image=null,revision=0,resolve=null,titleText='Retrato do perfil',titleParams={},statusText='';
   const token=()=>++revision;
-  function status(text){$('status').textContent=text;}
+  function status(text){statusText=text;$('status').textContent=UIText.error(text);} function refreshLanguage(){if($('dialog').open){$('title').textContent=UIText.t(titleText,titleParams);$('status').textContent=UIText.error(statusText);}}
   function render(){
     if(!crop||!image)return;
     const canvas=$('image'),ctx=canvas.getContext('2d'),scale=Math.min(640/crop.width,340/crop.height,1);
@@ -40,5 +40,5 @@ window.PortraitEditor = (() => {
   area.onkeydown=e=>{if(!crop)return;const d=e.shiftKey?10:1,delta={ArrowLeft:[-d,0],ArrowRight:[d,0],ArrowUp:[0,-d],ArrowDown:[0,d]}[e.key];if(delta){e.preventDefault();crop.move(crop.x+delta[0],crop.y+delta[1]);render();}};
   $('cancel').onclick=()=>finish(null);$('dialog').addEventListener('cancel',e=>{e.preventDefault();finish(null);});
   $('use').onclick=()=>{if(crop)finish($('preview').toDataURL('image/png'));};
-  return {open(title){if(resolve)finish(null);token();crop=image=null;$('editor').hidden=true;$('use').disabled=true;$('title').textContent=title;status('Tire uma captura ao salvar o personagem. Escolha o arquivo ou cole o print, depois enquadre o rosto.');$('dialog').showModal();return new Promise(done=>{resolve=done;});}};
+  return {refreshLanguage,open(title,params={}){if(resolve)finish(null);token();crop=image=null;$('editor').hidden=true;$('use').disabled=true;titleText=title;titleParams=params;$('title').textContent=UIText.t(title,params);status('Tire uma captura ao salvar o personagem. Escolha o arquivo ou cole o print, depois enquadre o rosto.');$('dialog').showModal();return new Promise(done=>{resolve=done;});}};
 })();

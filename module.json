@@ -1,8 +1,8 @@
 {
     "name": "looks-profile-manager",
     "author": "Local",
-    "description": "Catalogo de presets salvos no criador, com aplicacao opcional automatica.",
-    "version": "1.2.3",
+    "description": "Catálogo de presets salvos no criador, com retratos opcionais e seleção manual.",
+    "version": "1.2.6",
     "disableAutoUpdate": false,
     "options": {
         "niceName": "Looks Profile",

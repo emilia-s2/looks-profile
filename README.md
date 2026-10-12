@@ -24,6 +24,10 @@ Aguarde a mensagem de conclusão antes de ajustar o personagem. A aplicação po
 
 **Já tem perfis salvos?** Coloque os JSON na pasta `profiles` antes de abrir o jogo. Eles também ficam disponíveis para criar seu primeiro personagem, sem comandos ou edição de configuração.
 
+## Idioma da janela
+
+Use **Idioma**, no topo da GUI, para escolher **Automático**, **Português**, **English** ou **Español (Latinoamérica)**. A troca é imediata e fica salva em `config.json`, no campo `data.language`: `auto`, `pt`, `en` ou `es`. O modo automático usa o idioma do sistema; idiomas fora desses três usam inglês. Não é necessário instalar os mods de guia.
+
 ## Retratos opcionais
 
 Em **Salvar perfil → Escolher retrato opcional**, abra uma captura PNG/JPEG ou cole um print, enquadre o rosto e confirme. O retrato é salvo junto com o novo perfil.
@@ -43,22 +47,7 @@ Os ícones têm 64 × 64 pixels. Prefira uma captura com o rosto próximo e comp
 
 Atualizar a lista não substitui o catálogo já carregado no jogo: perfis e retratos novos exigem reabrir o TERA. Voltar ao login ou parar/iniciar o Toolbox com o mesmo jogo aberto não atualiza esse catálogo.
 
-<details>
-<summary>Configuração e aplicação automática antiga</summary>
-
-Mantenha `config.json`: ele guarda preferências e compatibilidade com versões antigas. Não precisa editá-lo para usar os presets.
-
-- `selectedProfileId`: perfil inicialmente selecionado na janela; sozinho não aplica aparência.
-- `profileOnNextLaunch`: escolha automática antiga, opcional e persistente até cancelar.
-- `applyNextCreate`: campo legado desativado; mantenha `false`.
-
-Se houver uma escolha automática salva, use **Ajuda → Configuração automática antiga → Desativar escolha automática antiga**. Os presets continuam disponíveis.
-
-Os comandos antigos `/8 lookprofile select Nome do perfil`, `/8 lookprofile arm` e `/8 lookprofile disarm` permanecem disponíveis. Depois de alterar a escolha automática, reabra somente o TERA.
-
-Para editar manualmente, encerre o Toolbox antes de alterar `config.json`, pois ele pode sobrescrever os valores ao fechar. `startup-profile.json` também aceita `profileOnNextLaunch` com o ID do arquivo sem `.json` ou o nome do perfil; prefira o ID se houver nomes repetidos. Use JSON válido, sem comentários.
-
-</details>
+`config.json` é mantido pelo Toolbox para preferências. Não guarda perfil padrão: os campos antigos são removidos automaticamente. A janela abre sem perfil selecionado e nenhum preset é aplicado até você clicar nele no criador. Os comandos antigos de preparação não ativam perfis.
 
 <details>
 <summary>Arquivos e limites</summary>

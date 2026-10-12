@@ -1,8 +1,6 @@
 {
     "version": 1,
     "data": {
-        "selectedProfileId": "",
-        "applyNextCreate": false,
-        "profileOnNextLaunch": ""
+        "language": "auto"
     }
 }
