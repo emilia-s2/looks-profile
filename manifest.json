@@ -1,10 +1,6 @@
 {
     "files": {
-        "config.json": {
-            "hash": "11e2f9ddb917b3f5f9c9645de9b68d6641a4c9c2db809d8043aa4601a116f634",
-            "overwrite": false
-        },
-        "index.js": "9153743acc1cc689957ecd4f68f78d2ca561536e6acb74992aabd4ebf33d9656",
+        "index.js": "8092a1eb515ae041653a20aefe020f8b8acf115979302a1780d27321f7ad5961",
         "lib/catalog.js": "550ded6a95044e7477652e15f55e8a84264829eb69ab6fcbbd05c94bbf2f7b58",
         "lib/gui-shortcut.js": "4521913cee4887239cc29dbfd027758eed67527bfc476f4f040138749e092c86",
         "lib/i18n.js": "3c9ce41ceddac2a0bbd13c7d0243467b1d3f2db79c287a4f6c6b6e125ba5c42b",
@@ -14,10 +10,11 @@
         "lib/preferences.js": "d4f9fbb02e00d7e57414adf2ad24a9954b4275b3f3293a72a5b44a09688a5c4c",
         "lib/preview-cache.js": "9641a99e4f8f02a0140a1b1bbc4a8495e3c4138754dfd9613b7afa4163b31c7c",
         "lib/profile.js": "b1060771ea75aaf1b7a7967e32ccdbcbcc20d746f44f0234e5c7ff904f617fe9",
-        "lib/ui-baseline-test.js": "58045708f28d1fe5f0634cc6ab27cdf4f0fdd9cabd2a41ae9b607ed59f8c4688",
-        "module.json": "5be282ba2d5cd0689d975a6bcce374398270b9d855ed46472f3eb5daefc2db80",
+        "lib/ui-baseline-test.js": "a0414092b5fd3267388c0211baa4d25f5f41a383be0993f4bea552c955fa6287",
+        "module.json": "eabf5e56b733e1f2674dc147195d33c13249c01393df57a3dd646d73e08bfbdd",
         "resources/creator-profile.gpk.gz": "af487214d5f3beba29854798fd344e021cbd05752e97a721d81f40d1d010bc03",
         "resources/portrait-actions.bin": "bf96e6f6330bc4a8970c46f5066a345de54e4e805b36413b2dabe129371d341f",
+        "settings_migrator.js": "699086f7b5589a6b671f91e2b728e206e4bf41790f811915ae84997bf5028d14",
         "ui/crop.js": "4fdcb0b700cde4b0aff7904b151e5f613642dee8ec6b425e8bfa3a2b57855e18",
         "ui/i18n.js": "8b2b32ed9ae1f569dd2d8feb078222fd49cba28d20878b48c13ce2c4e44077fd",
         "ui/index.html": "bf3a87249b5119de8b77f211103c62e438fb2cfe8095538bac91064a15d6b5e4",

@@ -1,3 +1,6 @@
+# Preferencias pessoais: criadas localmente, nunca publicadas.
+/config.json
+
 # Dados pessoais e arquivos gerados durante o uso do mod.
 /profiles/
 /icons/
@@ -20,3 +23,6 @@
 # Dados locais da exportacao do criador.
 /creator-catalog.json
 /profile-backups/
+
+# Documentacao tecnica local, fora do pacote publicado.
+/_docs-local/

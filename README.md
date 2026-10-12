@@ -47,7 +47,7 @@ Os ícones têm 64 × 64 pixels. Prefira uma captura com o rosto próximo e comp
 
 Atualizar a lista não substitui o catálogo já carregado no jogo: perfis e retratos novos exigem reabrir o TERA. Voltar ao login ou parar/iniciar o Toolbox com o mesmo jogo aberto não atualiza esse catálogo.
 
-`config.json` é mantido pelo Toolbox para preferências. Não guarda perfil padrão: os campos antigos são removidos automaticamente. A janela abre sem perfil selecionado e nenhum preset é aplicado até você clicar nele no criador. Os comandos antigos de preparação não ativam perfis.
+`config.json` é criado localmente pelo mod e mantido pelo Toolbox para preferências. Ele não faz parte do pacote publicado nem do manifest de atualização. Não guarda perfil padrão: os campos antigos são removidos automaticamente. A janela abre sem perfil selecionado e nenhum preset é aplicado até você clicar nele no criador. Os comandos antigos de preparação não ativam perfis.
 
 <details>
 <summary>Arquivos e limites</summary>

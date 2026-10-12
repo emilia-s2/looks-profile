@@ -2,13 +2,14 @@
     "name": "looks-profile-manager",
     "author": "Local",
     "description": "Catálogo de presets salvos no criador, com retratos opcionais e seleção manual.",
-    "version": "1.2.6",
+    "version": "1.2.7",
     "disableAutoUpdate": false,
     "options": {
         "niceName": "Looks Profile",
         "guiName": "Perfis de aparência",
         "settingsVersion": 1,
-        "settingsFile": "config.json"
+        "settingsFile": "config.json",
+        "settingsMigrator": "settings_migrator.js"
     },
     "servers": ["https://raw.githubusercontent.com/emilia-s2/looks-profile/main/"]
 }
