@@ -4,6 +4,8 @@ const fs = require('fs');
 const path = require('path');
 const ProfilePanel = require('./lib/panel');
 const Profile = require('./lib/profile');
+const ProfileStore = require('./lib/profile-store');
+const crypto = require('crypto');
 const UiTest = require('./lib/ui-baseline-test');
 const Portraits = require('./lib/portraits');
 const Preferences = require('./lib/preferences');
@@ -14,6 +16,7 @@ module.exports = function LooksProfileManager(mod) {
 	const playerData = new Map();
 	const lobbyData = new Map();
 	let selfData = null;
+    let pendingChange = null;
 	let profiles = new Map();
 	let settingsUi = null;
 	const feedback = [];
@@ -22,6 +25,7 @@ module.exports = function LooksProfileManager(mod) {
 
 	mod.hook('S_LOGIN', mod.majorPatchVersion >= 114 ? 15 : 14, event => {
 		selfData = event;
+        pendingChange = null;
 	});
 
 	mod.hook('S_SPAWN_USER', mod.majorPatchVersion >= 99 ? 16 : 15, event => {
@@ -151,10 +155,11 @@ module.exports = function LooksProfileManager(mod) {
         let status;
         try { status = UiTest.describe(mod); } catch (error) { status = Locale.error(Locale.resolve(mod), error.message); }
         return {
-            version: '1.2.7', selectionEpoch, language: Locale.resolve(mod), languagePreference: mod.settings.language,
+            version: '1.3.2', selectionEpoch, language: Locale.resolve(mod), languagePreference: mod.settings.language,
             profiles: Array.from(profiles, ([id, p]) => ({ id, name: p.profileName, source: p.sourceName || Locale.t(Locale.resolve(mod), 'Origem desconhecida'), race: raceName(p.race), gender: genderName(p.gender), details: p.details.length, portrait: Portraits.preview(__dirname, id) })),
             status: plainMessage(status), feedback: feedback.map(record => plainMessage(record.status ? UiTest.describe(mod) : Locale.t(Locale.resolve(mod), record.text, record.params))),
             selfName: selfData && selfData.name || '',
+            canUpdate: !!(selfData && mod.game && mod.game.isIngame),
             sources: Array.from(new Set([...Array.from(lobbyData.values(), c => c.name), ...Array.from(playerData.values(), c => c.name)]))
         };
     }
@@ -176,6 +181,31 @@ module.exports = function LooksProfileManager(mod) {
                     if (target.length > 100 || name.length > 100) throw Error('Use até 100 caracteres por campo.');
                     const id = saveProfile(target || 'self', name, payload.portrait);
                     if(id && settingsUi) settingsUi.send('profile-saved', {id});
+                    break;
+                }
+                case 'request-delete':
+                case 'request-update': {
+                    pendingChange = null;
+                    if(typeof payload.id !== 'string' || !profiles.has(payload.id)) throw Error('Selecione um perfil salvo válido.');
+                    const current = ProfileStore.snapshot(__dirname, payload.id);
+                    const updating = action === 'request-update';
+                    if(updating && !(selfData && mod.game && mod.game.isIngame)) throw Error('Entre no mundo com o personagem que deseja salvar.');
+                    const replacement = updating ? Profile.createProfile(current.profile.profileName, selfData) : null;
+                    const token = crypto.randomBytes(16).toString('hex');
+                    pendingChange = {token, id:payload.id, revision:current.revision, replacement, source:selfData, expires:Date.now()+300000};
+                    if(settingsUi) settingsUi.send('confirm-profile-change', {token, kind:updating?'update':'delete', name:current.profile.profileName,
+                        source:replacement && replacement.sourceName, race:replacement && raceName(replacement.race), gender:replacement && genderName(replacement.gender)});
+                    break;
+                }
+                case 'cancel-profile-change': pendingChange = null; break;
+                case 'confirm-profile-change': {
+                    const change = pendingChange; pendingChange = null;
+                    if(!change || payload.token !== change.token || Date.now()>change.expires) throw Error('Confirmação expirada. Escolha o perfil novamente.');
+                    if(change.replacement && (!(mod.game && mod.game.isIngame) || selfData !== change.source)) throw Error('O personagem mudou ou saiu do mundo. Tente novamente.');
+                    const result = ProfileStore.apply(__dirname, change.id, change.revision, change.replacement);
+                    loadProfiles();
+                    notify(change.replacement ? 'Looks Profile: perfil atualizado. Nome e retrato mantidos. Reabra somente o TERA para atualizar o catálogo.' : 'Looks Profile: perfil excluído do catálogo local. Reabra somente o TERA para atualizar o criador.');
+                    if(result.cleanupPending) notify('Looks Profile: restaram arquivos temporários da exclusão. Confira a pasta do mod antes de considerar a remoção completa.');
                     break;
                 }
                 case 'set-icon':
@@ -210,7 +240,7 @@ module.exports = function LooksProfileManager(mod) {
     }
 
 	function raceName(race) {
-		return Locale.t(Locale.resolve(mod), ['Humana', 'Castanic', 'Aman', 'Elfa alta', 'Popori/Elin', 'Baraka'][race] || 'raça {race}', {race});
+		return Locale.t(Locale.resolve(mod), ['Humana', 'Elfa alta', 'Aman', 'Castanic', 'Popori/Elin', 'Baraka'][race] || 'raça {race}', {race});
 	}
 
 	function genderName(gender) {
@@ -273,7 +303,7 @@ module.exports = function LooksProfileManager(mod) {
 	}
 
 	function showStatus() {
-        notify('Looks Profile {version}: {count} perfil(is) salvo(s). Nenhum perfil padrão ou aplicação automática. Escolha um preset em Customize → Presets.', {version: '1.2.7', count: profiles.size});
+        notify('Looks Profile {version}: {count} perfil(is) salvo(s). Nenhum perfil padrão ou aplicação automática. Escolha um preset em Customize → Presets.', {version: '1.3.2', count: profiles.size});
         try { feedback.push({status:true}); if(feedback.length>6)feedback.shift(); mod.command.message(UiTest.describe(mod)); } catch (error) { notify('Looks Profile: status indisponível: {error}', {error: error.message}); }
     }
 

@@ -40,5 +40,5 @@ window.PortraitEditor = (() => {
   area.onkeydown=e=>{if(!crop)return;const d=e.shiftKey?10:1,delta={ArrowLeft:[-d,0],ArrowRight:[d,0],ArrowUp:[0,-d],ArrowDown:[0,d]}[e.key];if(delta){e.preventDefault();crop.move(crop.x+delta[0],crop.y+delta[1]);render();}};
   $('cancel').onclick=()=>finish(null);$('dialog').addEventListener('cancel',e=>{e.preventDefault();finish(null);});
   $('use').onclick=()=>{if(crop)finish($('preview').toDataURL('image/png'));};
-  return {refreshLanguage,open(title,params={}){if(resolve)finish(null);token();crop=image=null;$('editor').hidden=true;$('use').disabled=true;titleText=title;titleParams=params;$('title').textContent=UIText.t(title,params);status('Tire uma captura ao salvar o personagem. Escolha o arquivo ou cole o print, depois enquadre o rosto.');$('dialog').showModal();return new Promise(done=>{resolve=done;});}};
+  return {refreshLanguage,open(title,params={}){if(resolve)finish(null);token();crop=image=null;$('editor').hidden=true;$('use').disabled=true;titleText=title;titleParams=params;$('title').textContent=UIText.t(title,params);status('Escolha uma imagem PNG/JPEG do computador ou copie uma captura e use Colar captura da tela. Depois enquadre o rosto e confirme o recorte.');$('dialog').showModal();return new Promise(done=>{resolve=done;});}};
 })();

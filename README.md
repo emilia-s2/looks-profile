@@ -14,7 +14,7 @@ Todos os perfis compatíveis aparecem juntos no criador. Não é necessário pre
 ## Como usar
 
 1. Dentro do jogo, use **Ctrl+Alt+L** ou digite `/8 lookprofile` para abrir a janela.
-2. Em **Salvar perfil**, use `self` para seu personagem ou informe o nome de um personagem recebido na seleção ou visível no mapa. Dê um nome ao perfil e salve.
+2. Em **Salvar perfil**, escolha **Meu personagem** para usar o personagem com que você entrou no mundo. Para copiar outro personagem seu da seleção ou um jogador visível no mapa, escolha **Outro personagem pelo nome** e informe o nome exato. Dê um nome ao novo perfil ou deixe vazio para usar o nome do personagem. A lista de nomes tem barra de rolagem; você também pode digitar para filtrar as sugestões ou informar o nome completo.
 3. Reabra **somente o TERA**, mantendo o Toolbox iniciado, para atualizar o catálogo.
 4. No criador, escolha raça, gênero e classe, entre em **Customize → Presets** e clique em um dos seus presets ao lado do botão aleatório.
 
@@ -30,11 +30,20 @@ Use **Idioma**, no topo da GUI, para escolher **Automático**, **Português**, *
 
 ## Retratos opcionais
 
-Em **Salvar perfil → Escolher retrato opcional**, abra uma captura PNG/JPEG ou cole um print, enquadre o rosto e confirme. O retrato é salvo junto com o novo perfil.
+Em **Salvar perfil**, clique no quadro do retrato ou em **Adicionar retrato**. Na janela que abrir, use **Escolher imagem do computador** para um arquivo PNG/JPEG ou **Colar captura da tela** para uma imagem copiada. Enquadre o rosto e confirme em **Usar este recorte**. O retrato é opcional e vira o ícone do preset; os dados de aparência vêm do personagem escolhido, independentemente da imagem.
 
-Para um perfil existente, use **Perfis salvos → Adicionar ou trocar retrato**. A seleção nessa janela serve para consultar o perfil e editar o retrato; a aparência é escolhida no criador.
+Para um perfil existente, selecione-o em **Perfis salvos**. O retrato aparece abaixo do título da aba; clique no quadro ou em **Adicionar retrato / Trocar retrato**. A seleção nessa janela serve para consultar o perfil e editar o retrato; a aparência é escolhida no criador.
 
 Os ícones têm 64 × 64 pixels. Prefira uma captura com o rosto próximo e compare a opção **Nitidez suave**. Reabra somente o TERA para atualizar os ícones no criador. Sem retrato, o botão mostra “Preset 1”, “Preset 2” etc. A captura não é automática.
+
+## Atualizar ou excluir um perfil
+
+Em **Perfis salvos**, selecione o perfil desejado:
+
+- **Atualizar com meu personagem**: disponível dentro do mundo, substitui a aparência salva pelos dados recebidos do personagem conectado. Mantém o nome do perfil e seu retrato. A confirmação mostra o perfil e o personagem de origem.
+- **Excluir perfil**: após confirmação, remove o arquivo do perfil e o retrato associado. Não exclui nenhum personagem do jogo. A janela não oferece desfazer.
+
+A lista da GUI é atualizada imediatamente. Reabra **somente o TERA**, com Toolbox iniciado, para o catálogo do criador refletir atualizações e exclusões. Isso não captura ajustes ainda não confirmados na tela de customização.
 
 ## Comandos
 
