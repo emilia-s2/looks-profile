@@ -4,6 +4,10 @@ Salve a aparência de personagens do TERA e escolha seus perfis como presets em 
 
 Todos os perfis compatíveis aparecem juntos no criador. Não é necessário preparar ou ativar cada um.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/emilia-s2/looks-profile/assets/overview.gif" alt="Demonstração do Looks Profile" width="100%" />
+</p>
+
 ## Instalação
 
 1. Coloque a pasta `looks-profile-manager` em `tera-toolbox/mods`.
@@ -25,6 +29,11 @@ Aguarde a mensagem de conclusão antes de ajustar o personagem. A aplicação po
 **Já tem perfis salvos?** Coloque os JSON na pasta `profiles` antes de abrir o jogo. Eles também ficam disponíveis para criar seu primeiro personagem, sem comandos ou edição de configuração.
 
 ## Idioma da janela
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/emilia-s2/looks-profile/assets/ui-pt.gif" alt="Interface em Português" width="49%" />
+  <img src="https://raw.githubusercontent.com/emilia-s2/looks-profile/assets/ui-en.gif" alt="Interface in English" width="49%" />
+</p>
 
 Use **Idioma**, no topo da GUI, para escolher **Automático**, **Português**, **English** ou **Español (Latinoamérica)**. A troca é imediata e fica salva em `config.json`, no campo `data.language`: `auto`, `pt`, `en` ou `es`. O modo automático usa o idioma do sistema; idiomas fora desses três usam inglês. Não é necessário instalar os mods de guia.
 
