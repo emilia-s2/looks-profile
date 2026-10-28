@@ -4,8 +4,10 @@ Salve a aparência de personagens do TERA e escolha seus perfis como presets em 
 
 Todos os perfis compatíveis aparecem juntos no criador. Não é necessário preparar ou ativar cada um.
 
+## Demonstração
+
 <p align="center">
-  <img src="https://raw.githubusercontent.com/emilia-s2/looks-profile/assets/overview.gif" alt="Demonstração do Looks Profile" width="100%" />
+  <img src="https://raw.githubusercontent.com/emilia-s2/looks-profile/assets/overview.gif" alt="Demonstração do Looks Profile" />
 </p>
 
 ## Instalação
@@ -30,12 +32,19 @@ Aguarde a mensagem de conclusão antes de ajustar o personagem. A aplicação po
 
 ## Idioma da janela
 
+Use **Idioma**, no topo da GUI, para escolher **Automático**, **Português**, **English** ou **Español (Latinoamérica)**. A troca é imediata e fica salva em `config.json`, no campo `data.language`: `auto`, `pt`, `en` ou `es`. O modo automático usa o idioma do sistema; idiomas fora desses três usam inglês. Não é necessário instalar os mods de guia.
+
+### Português
+
 <p align="center">
-  <img src="https://raw.githubusercontent.com/emilia-s2/looks-profile/assets/ui-pt.gif" alt="Interface em Português" width="49%" />
-  <img src="https://raw.githubusercontent.com/emilia-s2/looks-profile/assets/ui-en.gif" alt="Interface in English" width="49%" />
+  <img src="https://raw.githubusercontent.com/emilia-s2/looks-profile/assets/ui-pt.gif" alt="Janela do Looks Profile em português" />
 </p>
 
-Use **Idioma**, no topo da GUI, para escolher **Automático**, **Português**, **English** ou **Español (Latinoamérica)**. A troca é imediata e fica salva em `config.json`, no campo `data.language`: `auto`, `pt`, `en` ou `es`. O modo automático usa o idioma do sistema; idiomas fora desses três usam inglês. Não é necessário instalar os mods de guia.
+### Inglês (English)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/emilia-s2/looks-profile/assets/ui-en.gif" alt="Looks Profile window in English" />
+</p>
 
 ## Retratos opcionais
 
